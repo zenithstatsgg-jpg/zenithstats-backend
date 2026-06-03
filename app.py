@@ -62,7 +62,7 @@ def get_matches():
         return jsonify({"success": False, "error": "Erreur de connexion"}), 502
 
 # Changé 'match_details' en 'watch_details' pour s'aligner sur ton index.html (Ligne 566)
-@app.route('/api/watch_details', methods=['GET'])
+@app.route('/api/match_details', methods=['GET'])
 def get_match_details():
     match_id = request.args.get('match_id')
     if not match_id:
