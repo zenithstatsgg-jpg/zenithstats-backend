@@ -61,7 +61,8 @@ def get_matches():
     except requests.RequestException:
         return jsonify({"success": False, "error": "Erreur de connexion"}), 502
 
-@app.route('/api/match_details', methods=['GET'])
+# Changé 'match_details' en 'watch_details' pour s'aligner sur ton index.html (Ligne 566)
+@app.route('/api/watch_details', methods=['GET'])
 def get_match_details():
     match_id = request.args.get('match_id')
     if not match_id:
@@ -81,8 +82,3 @@ def get_match_details():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-    from flask import Flask, jsonify, request
-from flask_cors import CORS  # Prépare l'accès public
-
-app = Flask(__name__)
-CORS(app)  # Permet à n'importe quel navigateur sur le web de lire ton API de statistiques
